@@ -1,0 +1,348 @@
+{
+  spec: {
+    name: "porter2_clark",
+    size: {
+      x: 4,
+      y: 2
+    },
+    params: {
+      global: {
+        POR_CHIB_REQ_RSVDC_WIDTH_PARAM : 4,
+        POR_CHIB_REQ_ADDR_WIDTH_PARAM : 48,
+        POR_PA_WIDTH_PARAM : 48,
+        POR_DATACHECK_EN_PARAM : 0,
+        POR_POISON_EN_PARAM : 1,
+        POR_FLIT_PAR_EN_PARAM : 1
+      }
+    }
+  },
+  nodes: [
+    {
+      id: 0,
+      name: "MXP",
+      dtc_domain: 0,
+      port: {
+        device: {
+          p0: [
+            {
+              dcs: 0,
+              id: 0,
+              a4s: 0,
+              name: "CXRH"
+            }
+          ],
+          p1: [
+            {
+              dcs: 0,
+              id: 4,
+              a4s: 0,
+              name: "RND"
+            }
+          ]
+        },
+        mesh: {
+          north: {
+            mcs: 0,
+            next: 1
+          },
+          east: {
+            mcs: 0,
+            next: 10
+          }
+        }
+      },
+      position: {
+        x: 0,
+        y: 0
+      }
+    },
+    {
+      id: 1,
+      name: "MXP",
+      dtc_domain: 0,
+      port: {
+        device: {
+          p0: [
+            {
+              dcs: 0,
+              id: 8,
+              name: "RND"
+            }
+          ],
+          p1: [
+            {
+              dcs: 0,
+              id: 12,
+              name: "RND"
+            }
+          ]
+        },
+        mesh: {
+          south: {
+            mcs: 0,
+            next: 0
+          },
+          east: {
+            mcs: 0,
+            next: 11
+          }
+        }
+      },
+      position: {
+        x: 0,
+        y: 1
+      }
+    },
+    {
+      id: 10,
+      name: "MXP",
+      params: {
+        MXP_RXBUF_NUM_ENTRIES_P0_PARAM: 3
+      },
+      dtc_domain: 0,
+      port: {
+        device: {
+          p0: [
+            {
+              dcs: 0,
+              id: 32,
+              name: "RNFB"
+            }
+          ],
+          p1: [
+            {
+              dcs: 0,
+              id: 36,
+              name: "HNF"
+            }
+          ]
+        },
+        mesh: {
+          north: {
+            mcs: 0,
+            next: 11
+          },
+          east: {
+            mcs: 0,
+            next: 20
+          },
+          west: {
+            mcs: 0,
+            next: 0
+          }
+        }
+      },
+      position: {
+        x: 1,
+        y: 0
+      }
+    },
+    {
+      id: 11,
+      name: "MXP",
+      dtc_domain: 0,
+      port: {
+        device: {
+          p0: [
+            {
+              dcs: 0,
+              id: 40,
+              name: "HNF"
+            }
+          ],
+          p1: [
+            {
+              dcs: 0,
+              id: 44,
+              name: "RND"
+            }
+          ]
+        },
+        mesh: {
+          south: {
+            mcs: 0,
+            next: 10
+          },
+          east: {
+            mcs: 0,
+            next: 21
+          },
+          west: {
+            mcs: 0,
+            next: 1
+          }
+        }
+      },
+      position: {
+        x: 1,
+        y: 1
+      }
+    },
+    {
+      id: 20,
+      name: "MXP",
+      dtc_domain: 0,
+      port: {
+        device: {
+          p0: [
+            {
+              dcs: 0,
+              id: 64,
+              name: "RND"
+            }
+          ],
+          p1: [
+            {
+              dcs: 0,
+              id: 68,
+              name: "HNF"
+            }
+          ]
+        },
+        mesh: {
+          north: {
+            mcs: 0,
+            next: 21
+          },
+          east: {
+            mcs: 0,
+            next: 30
+          },
+          west: {
+            mcs: 0,
+            next: 10
+          }
+        }
+      },
+      position: {
+        x: 2,
+        y: 0
+      }
+    },
+    {
+      id: 21,
+      name: "MXP",
+      params: {
+        MXP_RXBUF_NUM_ENTRIES_P1_PARAM: 3
+      },
+      dtc_domain: 0,
+      port: {
+        device: {
+          p0: [
+            {
+              dcs: 0,
+              id: 72,
+              name: "HNF"
+            }
+          ],
+          p1: [
+            {
+              dcs: 0,
+              id: 76,
+              name: "RNFB"
+            }
+          ]
+        },
+        mesh: {
+          south: {
+            mcs: 0,
+            next: 20
+          },
+          east: {
+            mcs: 0,
+            next: 31
+          },
+          west: {
+            mcs: 0,
+            next: 11
+          }
+        }
+      },
+      position: {
+        x: 2,
+        y: 1
+      }
+    },
+    {
+      id: 30,
+      name: "MXP",
+      params: {
+        MXP_RXBUF_NUM_ENTRIES_P0_PARAM: 3
+      },
+      dtc_domain: 0,
+      port: {
+        device: {
+          p0: [
+            {
+              dcs: 0,
+              id: 96,
+              name: "SNF"
+            }
+          ],
+          p1: [
+            {
+              dcs: 0,
+              id: 100,
+              name: "SBSX"
+            }
+          ]
+        },
+        mesh: {
+          north: {
+            mcs: 0,
+            next: 31
+          },
+          west: {
+            mcs: 0,
+            next: 20
+          }
+        }
+      },
+      position: {
+        x: 3,
+        y: 0
+      }
+    },
+    {
+      id: 31,
+      name: "MXP",
+      params: {
+        MXP_RXBUF_NUM_ENTRIES_P1_PARAM: 3
+      },
+      dtc_domain: 0,
+      port: {
+        device: {
+          p0: [
+            {
+              dcs: 0,
+              id: 104,
+              name: "HND"
+            }
+          ],
+          p1: [
+            {
+              dcs: 0,
+              id: 108,
+              name: "SNF"
+            }
+          ]
+        },
+        mesh: {
+          south: {
+            mcs: 0,
+            next: 30
+          },
+          west: {
+            mcs: 0,
+            next: 21
+          }
+        }
+      },
+      position: {
+        x: 3,
+        y: 1
+      }
+    }
+  ]
+
+}
